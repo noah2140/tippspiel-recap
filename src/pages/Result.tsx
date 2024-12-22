@@ -1,4 +1,3 @@
-// Result.tsx
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom"; // Um die URL-Parameter zu holen
 import GraphComponent from "../components/GraphComponent"; // Importiere deine Graph-Komponente
@@ -14,8 +13,10 @@ const Result: React.FC = () => {
 
     if (encodedData) {
       try {
-        const decodedData = JSON.parse(decodeURIComponent(encodedData));
-        setResultData(decodedData);
+        // Base64 dekodieren
+        const decodedData = atob(encodedData); // atob() dekodiert Base64
+        const parsedData = JSON.parse(decodedData); // JSON wieder in das ursprüngliche Format umwandeln
+        setResultData(parsedData); // Daten in den State setzen
       } catch (e) {
         console.error("Fehler beim Entschlüsseln der Daten:", e);
       }

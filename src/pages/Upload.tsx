@@ -22,11 +22,13 @@ const Upload: React.FC = () => {
       tipps
     };
   
-    const encodedData = encodeURIComponent(JSON.stringify(data));
+    // Die Daten in JSON umwandeln und Base64 kodieren
+    const jsonData = JSON.stringify(data);
+    const encodedData = btoa(jsonData); // btoa() wandelt in Base64 um
   
+    // Generiere den Link mit der Base64-kodierten Datenzeichenkette
     const generatedLink = `${window.location.origin}/tippspiel-recap/#/result?data=${encodedData}`;
     setShareableLink(generatedLink);
-    console.log(shareableLink);
   };
 
   return (
