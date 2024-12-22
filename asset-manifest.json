@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/tippspiel-recap/static/css/main.c0137225.css",
+    "main.js": "/tippspiel-recap/static/js/main.2cf2c5c8.js",
+    "index.html": "/tippspiel-recap/index.html",
+    "main.c0137225.css.map": "/tippspiel-recap/static/css/main.c0137225.css.map",
+    "main.2cf2c5c8.js.map": "/tippspiel-recap/static/js/main.2cf2c5c8.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c0137225.css",
+    "static/js/main.2cf2c5c8.js"
+  ]
+}
