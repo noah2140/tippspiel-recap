@@ -1,0 +1,23 @@
+
+.graph-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 5vh;
+    flex-wrap: wrap;
+  }
+  
+  .graph-item {
+    flex: 1 1 45%;
+    min-width: 300px;
+  }
+  
+  @media (max-width: 768px) {
+    .graph-container {
+      flex-direction: column;
+      gap: 20px;
+    }
+    .graph-item {
+      flex: 1 1 100%;
+    }
+  }
+  
