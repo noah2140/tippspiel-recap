@@ -7,7 +7,7 @@ import Result from "./pages/Result";
 
 const App: React.FC = () => {
   return (
-    <Router basename="/tippspiel-recap">
+    <Router>
       <Routes>
         <Route
           path="/"
