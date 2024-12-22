@@ -6,6 +6,7 @@ import TippsDisplay from "../components/TippsDisplay";
 const Upload: React.FC = () => {
   const [gesamtuebersicht, setGesamtuebersicht] = useState<string | null>(null);
   const [tipps, setTipps] = useState<{ name: string; content: string }[]>([]);
+  const [shareableLink, setShareableLink] = useState<string | null>(null);
 
   const handleGesamtuebersichtUpload = (content: string) => {
     setGesamtuebersicht(content);
@@ -23,7 +24,8 @@ const Upload: React.FC = () => {
   
     const encodedData = encodeURIComponent(JSON.stringify(data));
   
-    const shareableLink = `${window.location.origin}/result?data=${encodedData}`;
+    const generatedLink = `${window.location.origin}/tippspiel-recap/#/result?data=${encodedData}`;
+    setShareableLink(generatedLink);
     console.log(shareableLink);
   };
 
@@ -59,6 +61,15 @@ const Upload: React.FC = () => {
       <div style={{ marginTop: "20px" }}>
         <button onClick={createShareableLink}>Link für Resultate erstellen</button>
       </div>
+
+      {shareableLink && (
+        <div style={{ marginTop: "20px", padding: "10px", border: "1px solid #ccc" }}>
+          <h3>Erstellter Link:</h3>
+          <a href={shareableLink} target="_blank" rel="noopener noreferrer">
+            {shareableLink}
+          </a>
+        </div>
+      )}
     </div>
   );
 };
